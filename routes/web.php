@@ -1,9 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookController;
+use App\Http\Controllers\BukuController;
+
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
-use App\Http\controllers\AbsenController;
+use App\Http\Controllers\PenulisController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,10 +19,12 @@ use App\Http\controllers\AbsenController;
 |
 */
 
-Route::get('/', [HomeController::class, 'index']);
-Route::get('/abc', [HomeController::class, 'index']);
+// // Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::resource('/', HomeController::class);
+Route::resource('/mahasiswa', MahasiswaController::class);
+Route::resource('/buku', BukuController::class);
 
-Route::get('/mahasiswa/{npm}', [MahasiswaController::class, 'view']);
-Route::get('/absen/{absen_mahasiswa}', [AbsenController::class, 'view']);
-
-
+Route::resource('/books',BookController::class);
+Route::resource('/penulis',PenulisController::class);
