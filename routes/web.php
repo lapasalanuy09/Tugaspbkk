@@ -2,11 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookController;
-use App\Http\Controllers\BukuController;
-
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\PenulisController;
+use App\Http\Controllers\AuthorController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +20,9 @@ use App\Http\Controllers\PenulisController;
 // // Route::get('/', function () {
 //     return view('welcome');
 // });
-Route::resource('/', HomeController::class);
-Route::resource('/mahasiswa', MahasiswaController::class);
-Route::resource('/buku', BukuController::class);
+// Route::resource('/', HomeController::class);
+// Route::resource('/mahasiswa', MahasiswaController::class);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::resource('/books',BookController::class);
-Route::resource('/penulis',PenulisController::class);
+Route::resource('books', BookController::class);
+Route::resource('authors', AuthorController::class);

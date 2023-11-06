@@ -14,5 +14,6 @@ class HomeController extends Controller
     public function abc()
     {
         echo 'Ini adalah controller HomeController method abc';
+        return view('welcome');
     }
 }
