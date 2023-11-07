@@ -26,3 +26,11 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::resource('books', BookController::class);
 Route::resource('authors', AuthorController::class);
+
+Route::get('/halaman-a', function () {
+    return view('contoh.halaman-a');
+});
+
+Route::get('/halaman-b', function () {
+    return view('contoh.halaman-b');
+});
