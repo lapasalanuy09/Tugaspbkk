@@ -40,7 +40,7 @@
                     </table>
                 </div>
                 <div class="card-footer">
-                    {{ $authors->links() }}
+                    {{-- {{ $authors->links() }} --}}
                 </div>
             </div>
         </div>

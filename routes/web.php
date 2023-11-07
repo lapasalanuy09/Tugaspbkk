@@ -24,6 +24,8 @@ use App\Http\Controllers\AuthorController;
 // Route::resource('/mahasiswa', MahasiswaController::class);
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
+Route::get('/books/show',[BookController::class, 'index' ])->name('books.index');
+
 Route::resource('books', BookController::class);
 Route::resource('authors', AuthorController::class);
 

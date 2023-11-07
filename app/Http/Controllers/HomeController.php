@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     public function index()
     {
-        echo 'Ini adalah controller HomeController method index';
+        $books = Book::all();
+        return view('books.index', compact('books'));
     }
 
     public function abc()

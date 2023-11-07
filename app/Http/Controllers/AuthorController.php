@@ -12,7 +12,7 @@ class AuthorController extends Controller
      */
     public function index()
     {
-        $authors = Author::orderBy('name')->paginate();
+        $authors = Author::all();
 
         return view('authors.index',  compact('authors'));
     }
@@ -22,7 +22,8 @@ class AuthorController extends Controller
      */
     public function create()
     {
-        return view('authors.create');
+        $authors = Author::all();
+        return view('authors.create',compact('authors'));
     }
 
     /**
@@ -36,7 +37,10 @@ class AuthorController extends Controller
             'address' => 'nullable|max:255'
         ]);
 
-        Author::create($request->all());
+        $author=new author();
+        $author->name =$request-> name;
+        $author->email =$request-> email;
+        $author->address =$request-> address;
 
         return redirect()
             ->route('authors.index')

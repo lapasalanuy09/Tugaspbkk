@@ -47,11 +47,11 @@
                         <a class="nav-link" aria-current="page" href="{{ route('home') }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ activeClass('authors.*') }}"
+                        <a class="nav-link"
                             href="{{ route('authors.index') }}">Authors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ activeClass('books.*') }}" href="{{ route('books.index') }}">Books</a>
+                        <a class="nav-link " href="{{ route('books.index') }}">Books</a>
                     </li>
                 </ul>
                 <!-- Left links -->

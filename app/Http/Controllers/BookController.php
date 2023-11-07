@@ -15,18 +15,17 @@ class BookController extends Controller
 
     public function create()
     {
-        return view('books.create');
+
         $authors = Author::all();
 
-        return view('books.create', compact('books'));
+        return view('books.create', compact('authors'));
     }
 
     public function store(Request $request)
     {
-        //1. validasi
+        // 1. validasi
         $request->validate([
             'title' => 'required|max:255|unique:books,title',
-            'author' => 'required|max:255',
             'author_id' => 'required',
             'description' => 'nullable',
         ]);
@@ -35,19 +34,20 @@ class BookController extends Controller
         $book = new Book();
 
         $book->title = $request->title;
-        $book->author = $request->author;
         $book->author_id = $request->author_id;
         $book->description = $request->description;
 
         $book->save();
-        //3. redirect
+
+        
+        // 3. redirect
         return redirect()
             ->route('books.index')
             ->with('pesan', 'Data berhasil disimpan');
     }
     public function show(Book $book)
     {
-        return view('books.show', compact('book'));
+        return view('books.show', compact('authors'));
     }
     public function edit(Book $book)
     {

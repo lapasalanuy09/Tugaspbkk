@@ -16,11 +16,12 @@ class Book extends Model
      * 
      * @var array
      */
-    // public $fillable  = [
-    //     'author_id',
-    //     'title',
-    //     'description',
-    // ];
+    
+    public $fillable  = [
+        'author_id',
+        'title',
+        'description',
+    ];
 
     /**
      * Mendapatkan data author dari buku
